@@ -3,6 +3,7 @@ package app.template.patches.windscribe
 import app.morphe.patcher.Fingerprint
 import com.android.tools.smali.dexlib2.AccessFlags
 
+// ---- UserLoginResponse ----
 val LoginPremiumFingerprint = Fingerprint(
     definingClass = "Lcom/windscribe/vpn/api/response/UserLoginResponse;",
     name = "isPremium",
@@ -24,6 +25,7 @@ val LoginBillingPlanFingerprint = Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL)
 )
 
+// ---- UserRegistrationResponse ----
 val RegistrationPremiumFingerprint = Fingerprint(
     definingClass = "Lcom/windscribe/vpn/api/response/UserRegistrationResponse;",
     name = "isPremium",
@@ -38,6 +40,7 @@ val RegistrationTrafficMaxFingerprint = Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL)
 )
 
+// ---- UserSessionResponse ----
 val SessionPremiumFingerprint = Fingerprint(
     definingClass = "Lcom/windscribe/vpn/api/response/UserSessionResponse;",
     name = "isPremium",
@@ -80,6 +83,7 @@ val SessionPremiumExpiryFingerprint = Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL)
 )
 
+// ---- LocationData (country-level gate) ----
 val LocationPremiumOnlyFingerprint = Fingerprint(
     definingClass = "Lcom/windscribe/vpn/api/response/LocationData;",
     name = "getPremiumOnly",
@@ -90,6 +94,21 @@ val LocationPremiumOnlyFingerprint = Fingerprint(
 val LocationPremiumOnlyComponentFingerprint = Fingerprint(
     definingClass = "Lcom/windscribe/vpn/api/response/LocationData;",
     name = "component5",
+    returnType = "I",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL)
+)
+
+// ---- DatacenterData (per-server gate, TV build only) ----
+val DatacenterPremiumFingerprint = Fingerprint(
+    definingClass = "Lcom/windscribe/vpn/api/response/DatacenterData;",
+    name = "getPremium",
+    returnType = "I",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL)
+)
+
+val DatacenterPremiumComponentFingerprint = Fingerprint(
+    definingClass = "Lcom/windscribe/vpn/api/response/DatacenterData;",
+    name = "component13",
     returnType = "I",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL)
 )
