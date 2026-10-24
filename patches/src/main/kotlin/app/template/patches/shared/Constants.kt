@@ -1790,10 +1790,7 @@ val WINDSCRIBE_COMPATIBILITY = Compatibility(
         packageName = "com.windscribe.vpn",
         appIconColor = 0x00AEEF,
         apkFileType = ApkFileType.APKM,
-        targets = listOf(
-            AppTarget(version = "4.3.2360", versionCode = 2360), // mobile
-            AppTarget(version = "4.3.2360", versionCode = 2361)  // Android TV
-        )
+        targets = listOf(AppTarget(version = "4.3.2360", versionCode = 2361))
     )
 
 val WINDY_COMPATIBILITY = Compatibility(
