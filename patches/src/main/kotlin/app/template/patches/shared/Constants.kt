@@ -1786,12 +1786,15 @@ val WIDGET2026_COMPATIBILITY = Compatibility(
     )
 
 val WINDSCRIBE_COMPATIBILITY = Compatibility(
-        name = "Windscribe VPN",
-        packageName = "com.windscribe.vpn",
-        appIconColor = 0x00AEEF,
-        apkFileType = ApkFileType.APKM,
-        targets = listOf(AppTarget(version = "4.3.2360", versionCode = 2361))
+    name = "Windscribe VPN",
+    packageName = "com.windscribe.vpn",
+    appIconColor = 0x00AEEF,
+    apkFileType = ApkFileType.APKM, 
+    targets = listOf(
+        // Explicitly tell Morphe this target is an APKM bundle
+        AppTarget(version = "4.3.2360", versionCode = 2361, minSdk = 24) 
     )
+)
 
 val WINDY_COMPATIBILITY = Compatibility(
         name = "Windy",
